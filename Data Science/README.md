@@ -1,0 +1,1 @@
+https://www.dicoding.com/learningpaths/60
