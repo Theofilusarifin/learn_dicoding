@@ -28,8 +28,7 @@ if selected_chart == "Average Delivery Time":
     sns.barplot(x=average_delivery_time.index,
                 y=average_delivery_time.values,
                 palette='viridis',
-                hue=average_delivery_time.index,
-                legend=False, ax=ax)
+                hue=average_delivery_time.index, ax=ax)
     plt.title('Average Delivery Time by Customer State')
     plt.xlabel('Customer State')
     plt.ylabel('Average Delivery Time (Days)')
@@ -44,6 +43,10 @@ elif selected_chart == "Percentage of Delayed Orders":
     delayed_percentage = (delayed_orders_count / total_orders_count) * 100
     not_delayed_percentage = 100 - delayed_percentage
 
+    # Sorting berdasarkan keterlambatan tertinggi
+    delayed_percentage = delayed_percentage.sort_values(ascending=False)
+    not_delayed_percentage = 100 - delayed_percentage
+
     # Plot
     st.subheader(
         "Percentage of Delayed and Not Delayed Orders by Customer State")
@@ -56,5 +59,5 @@ elif selected_chart == "Percentage of Delayed Orders":
     plt.xlabel('Customer State')
     plt.ylabel('Percentage')
     plt.xticks(rotation=45)
-    plt.legend()
+    plt.legend(title='Order Status')
     st.pyplot(fig)
