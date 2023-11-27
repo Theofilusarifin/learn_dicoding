@@ -2,8 +2,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+import os
 
 sns.set(style='dark')
+
+print("Current Directory:", os.getcwd())
 
 # Load data
 all_df = pd.read_csv("./main_data.csv")
