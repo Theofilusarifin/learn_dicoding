@@ -6,7 +6,7 @@ import streamlit as st
 sns.set(style='dark')
 
 # Load data
-all_df = pd.read_csv("main_data.csv")
+all_df = pd.read_csv("./main_data.csv")
 
 # Sidebar
 st.sidebar.title("Dashboard Options")
